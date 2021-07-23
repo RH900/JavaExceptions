@@ -1,3 +1,4 @@
+
 package listaexcecao1;
 
 import java.util.Scanner;
@@ -8,16 +9,21 @@ public class ListaExcecao1 {
     
     public static void main(String[] args) throws Exception {
         
+        double result = 0;
+        
+        
+       try{
         
         Scanner myscanner = new Scanner(System.in);
         
         System.out.println("Digite um numero: ");
         
-        int n1 = myscanner.nextInt();
+        float n1 = myscanner.nextInt();
         
         System.out.println("Digite outro numero: ");
        
-         int n2 = myscanner.nextInt();
+        float n2 = myscanner.nextInt();
+       
         
          
          
@@ -41,7 +47,24 @@ public class ListaExcecao1 {
            
        }
          
-      
+          try {
+              result = n1/n2;
+              System.out.println("Resultado da divisao : " + result);
+          }catch (ArithmeticException ex){
+              System.err.println("Divisao por zero \n "+ex.getMessage());
+          }
+          
+          
+          
+       }catch (Exception error){
+           System.out.println("Comando invalido ! \n Erro: " + error.getMessage());
+       }
+       finally {
+           System.out.println("Finalizada a execucao");
+       }   
+          
+          
+          
          
     }
     
